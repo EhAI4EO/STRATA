@@ -46,9 +46,6 @@ and what remains open for author confirmation.
   <b>Figure 3.</b> Summary of the principal experimental results.
 </p>
 
-*(See `assets/README.md` -- no figure files were attached to this
-conversation, so you'll need to add them yourself under the exact
-filenames above.)*
 
 ## Method summary
 
