@@ -1,0 +1,7 @@
+# STRATA, target label budget: 100 patches per foreground class.
+# This is the configuration directly reproduced from the uploaded notebook
+# (run name "STRATA_O2O_100_2" -> renamed here for clarity).
+extends: base.yaml
+
+target_labels_per_class: 100
+run_name: "STRATA_O2O_n100"

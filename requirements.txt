@@ -1,0 +1,14 @@
+# Core
+torch>=2.1
+transformers==4.37.2   # pinned per the notebook's (commented) install cell
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+openpyxl>=3.1           # required by pandas.ExcelWriter(engine="openpyxl")
+tqdm>=4.65
+PyYAML>=6.0
+
+# Data preparation / visualization
+opencv-python-headless>=4.8
+matplotlib>=3.7
+requests>=2.31

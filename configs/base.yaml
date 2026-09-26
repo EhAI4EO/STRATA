@@ -1,0 +1,42 @@
+# Shared defaults for every STRATA training run.
+# Budget-specific configs (budget_n*.yaml) inherit these and only override
+# target_labels_per_class, run_name, and out_dir.
+#
+# All values here reproduce the notebook's global config cell for the
+# reported optical-to-optical (O2O) experiments.
+
+# --- data ---
+source_root: "/path/to/ebd_npz"   # directory of source-domain NPZ patches
+target_root: "/path/to/ebd_npz"   # directory of target-domain NPZ patches
+                                    # (same as source_root for the O2O same-domain setup)
+splits_dir: "/path/to/splits"      # where source/target and train/val splits are cached
+out_root: "/path/to/runs"          # parent directory for all run outputs
+
+# Event names assigned to the TARGET domain; every other event in
+# source_root/target_root becomes the SOURCE domain.
+target_events:
+  - EARTHQUAKE-TURKEY
+  - TEXAS-TORNADOES
+  - HURRICANE-DELTA
+  - HURRICANE-IDA
+
+# --- model ---
+num_classes: 4          # 0=background, 1=intact, 2=damaged, 3=destroyed
+segformer_checkpoint: "nvidia/segformer-b2-finetuned-ade-512-512"
+
+# --- optimization ---
+epochs: 100
+eval_every: 3
+train_batch_size: 128
+learning_rate: 1.0e-4
+accum_steps: 2
+early_stop_patience: 5    # in validation cycles (i.e. early_stop_patience * eval_every epochs)
+warm_up_epochs: 0          # must stay 0 -- see src/trainer.py module docstring
+num_workers: 12
+
+# --- reproducibility ---
+seed: 42          # NOTE: an addition beyond the original notebook -- see src/utils.py
+gpu: "0"
+
+# --- label budget (overridden per budget_*.yaml) ---
+target_labels_per_class: 100

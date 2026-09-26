@@ -1,0 +1,7 @@
+# STRATA, target label budget: 250 patches per foreground class.
+# Corresponds to the checkpoint path "STRATA_O2O_full_250" referenced by
+# the notebook's qualitative-visualization cell.
+extends: base.yaml
+
+target_labels_per_class: 250
+run_name: "STRATA_O2O_n250"

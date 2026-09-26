@@ -1,0 +1,6 @@
+# STRATA, target label budget: 10 patches per foreground class.
+# Inherits everything from base.yaml except the fields below.
+extends: base.yaml
+
+target_labels_per_class: 10
+run_name: "STRATA_O2O_n10"
