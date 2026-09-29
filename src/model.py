@@ -1,9 +1,5 @@
 """STRATA model: SegFormer-B2 encoder + BCGA + lightweight multi-scale decoder.
 
-This module reproduces the architecture defined in the original research
-notebook under the class name ``SAHARASegFormer``. It is renamed here to
-``STRATA`` for clarity; no tensor operation, shape, or parameter is changed.
-
 Architecture summary
 ---------------------
 1. A pretrained SegFormer-B2 encoder (``nvidia/segformer-b2-finetuned-ade-512-512``)
